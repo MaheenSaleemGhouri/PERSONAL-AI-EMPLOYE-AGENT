@@ -1,0 +1,7 @@
+.env
+credentials/
+whatsapp_session/
+node_modules/
+__pycache__/
+*.log
+.DS_Store

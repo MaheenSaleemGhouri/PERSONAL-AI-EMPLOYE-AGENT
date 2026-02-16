@@ -1,0 +1,6 @@
+Invoice #1001
+Date: 2026-02-15
+Client: ABC Company
+Amount: $500.00
+Due Date: 2026-03-01
+Description: Web development services for February 2026

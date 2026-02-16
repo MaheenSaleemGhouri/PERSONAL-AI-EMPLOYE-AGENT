@@ -1,0 +1,13 @@
+{
+  "name": "social-mcp-server",
+  "version": "1.0.0",
+  "description": "Facebook + Instagram MCP Server for Gold Tier",
+  "main": "index.js",
+  "type": "module",
+  "scripts": { "start": "node index.js" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^16.0.0",
+    "node-fetch": "^3.3.0"
+  }
+}

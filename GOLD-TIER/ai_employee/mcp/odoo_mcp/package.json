@@ -1,0 +1,12 @@
+{
+  "name": "odoo-mcp-server",
+  "version": "1.0.0",
+  "description": "Odoo Community JSON-RPC MCP Server for Gold Tier",
+  "main": "index.js",
+  "type": "module",
+  "scripts": { "start": "node index.js" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^16.0.0"
+  }
+}
