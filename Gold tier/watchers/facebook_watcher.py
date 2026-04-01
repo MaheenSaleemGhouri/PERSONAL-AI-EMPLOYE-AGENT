@@ -131,6 +131,33 @@ class FacebookWatcher(BaseWatcher):
             data["link"] = link
         return self._graph_post(f"{self.page_id}/feed", data)
 
+    def reply_to_comment(self, comment_id: str, message: str) -> dict:
+        """Reply to a Facebook comment on a Page post."""
+        return self._graph_post(f"{comment_id}/comments", {"message": message})
+
+    def like_comment(self, comment_id: str) -> dict:
+        """Like a comment on behalf of the Page."""
+        return self._graph_post(f"{comment_id}/likes", {})
+
+    def send_messenger_reply(self, recipient_id: str, message: str) -> dict:
+        """Send a reply via Facebook Messenger (Page inbox)."""
+        return self._graph_post(
+            f"{self.page_id}/messages",
+            {"recipient": json.dumps({"id": recipient_id}), "message": json.dumps({"text": message})},
+        )
+
+    def get_page_insights(self, metric: str = "page_impressions,page_engaged_users,page_fans", period: str = "day") -> list[dict]:
+        """Get Page-level insights/analytics."""
+        try:
+            result = self._graph_get(
+                f"{self.page_id}/insights",
+                {"metric": metric, "period": period},
+            )
+            return result.get("data", [])
+        except Exception as e:
+            logger.warning(f"Could not fetch page insights: {e}")
+            return []
+
     # ── Instagram Methods ────────────────────────────────────────
 
     def get_instagram_media(self, limit: int = 10) -> list[dict]:
@@ -150,6 +177,22 @@ class FacebookWatcher(BaseWatcher):
             {"fields": "id,text,username,timestamp"},
         )
         return result.get("data", [])
+
+    def reply_to_instagram_comment(self, comment_id: str, message: str) -> dict:
+        """Reply to an Instagram comment."""
+        return self._graph_post(f"{comment_id}/replies", {"message": message})
+
+    def get_instagram_insights(self, media_id: str) -> list[dict]:
+        """Get insights for a specific Instagram media post."""
+        try:
+            result = self._graph_get(
+                f"{media_id}/insights",
+                {"metric": "impressions,reach,engagement"},
+            )
+            return result.get("data", [])
+        except Exception as e:
+            logger.warning(f"Could not fetch IG insights for {media_id}: {e}")
+            return []
 
     # ── Watcher Interface ────────────────────────────────────────
 
@@ -309,9 +352,23 @@ status: pending
         """Generate a markdown summary of recent Facebook + Instagram activity."""
         lines = [f"# Social Media Summary — {datetime.now().strftime('%Y-%m-%d')}\n"]
 
+        # Facebook Page Insights
+        insights = self.get_page_insights()
+        if insights:
+            lines.append("## Facebook Page Overview\n")
+            for metric in insights:
+                name = metric.get("title", metric.get("name", ""))
+                values = metric.get("values", [{}])
+                latest = values[-1].get("value", "N/A") if values else "N/A"
+                lines.append(f"- **{name}:** {latest}")
+            lines.append("")
+
         # Facebook posts
         try:
             posts = self.get_page_posts(limit=10)
+            total_likes = 0
+            total_comments = 0
+            total_shares = 0
             lines.append("## Facebook Page Posts\n")
             lines.append("| Date | Post | Likes | Comments | Shares |")
             lines.append("|------|------|-------|----------|--------|")
@@ -320,8 +377,12 @@ status: pending
                 likes = p.get("likes", {}).get("summary", {}).get("total_count", 0)
                 comments = p.get("comments", {}).get("summary", {}).get("total_count", 0)
                 shares = p.get("shares", {}).get("count", 0)
+                total_likes += likes
+                total_comments += comments
+                total_shares += shares
                 dt = p.get("created_time", "")[:10]
                 lines.append(f"| {dt} | {msg}... | {likes} | {comments} | {shares} |")
+            lines.append(f"| **Total** | | **{total_likes}** | **{total_comments}** | **{total_shares}** |")
             lines.append("")
         except Exception as e:
             lines.append(f"_Facebook data unavailable: {e}_\n")
@@ -330,19 +391,28 @@ status: pending
         if self.instagram_id:
             try:
                 media = self.get_instagram_media(limit=10)
+                total_ig_likes = 0
+                total_ig_comments = 0
                 lines.append("## Instagram Posts\n")
                 lines.append("| Date | Caption | Type | Likes | Comments |")
                 lines.append("|------|---------|------|-------|----------|")
                 for m in media:
                     caption = (m.get("caption") or "")[:50].replace("|", " ")
                     dt = m.get("timestamp", "")[:10]
+                    ig_likes = m.get("like_count", 0)
+                    ig_comments = m.get("comments_count", 0)
+                    total_ig_likes += ig_likes
+                    total_ig_comments += ig_comments
                     lines.append(
                         f"| {dt} | {caption}... | {m.get('media_type', '?')} | "
-                        f"{m.get('like_count', 0)} | {m.get('comments_count', 0)} |"
+                        f"{ig_likes} | {ig_comments} |"
                     )
+                lines.append(f"| **Total** | | | **{total_ig_likes}** | **{total_ig_comments}** |")
                 lines.append("")
             except Exception as e:
                 lines.append(f"_Instagram data unavailable: {e}_\n")
+        else:
+            lines.append("## Instagram\n_Not connected — set INSTAGRAM_BUSINESS_ID in .env_\n")
 
         return "\n".join(lines)
 

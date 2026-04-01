@@ -89,7 +89,7 @@ claude
 
 ---
 
-## Gold Tier Skills (27 total)
+## Gold Tier Skills (29 total)
 
 ### Bronze Skills (inherited)
 
@@ -123,6 +123,7 @@ claude
 | `/draft-facebook-post` | Draft Facebook Page post for approval |
 | `/publish-facebook-post` | Publish approved FB post via Graph API |
 | `/process-facebook` | Triage FB/IG comments and messages |
+| `/reply-facebook-comment` | Reply to approved FB/IG comment |
 | `/draft-twitter-post` | Draft tweet (≤280 chars) for approval |
 | `/publish-twitter-post` | Publish approved tweet via API v2 |
 | `/process-twitter` | Triage Twitter/X mentions |
