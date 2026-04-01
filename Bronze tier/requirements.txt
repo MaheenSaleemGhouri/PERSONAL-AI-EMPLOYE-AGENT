@@ -1,0 +1,16 @@
+# AI Employee — Bronze Tier Requirements
+# Install with: pip install -r requirements.txt
+
+# File system event monitoring (File System Watcher)
+watchdog>=4.0.0
+
+# Gmail Watcher (Silver tier — install when ready)
+# google-auth>=2.0.0
+# google-auth-oauthlib>=1.0.0
+# google-api-python-client>=2.0.0
+
+# WhatsApp Watcher (Silver tier — install when ready)
+# playwright>=1.40.0
+
+# Utilities
+python-dotenv>=1.0.0

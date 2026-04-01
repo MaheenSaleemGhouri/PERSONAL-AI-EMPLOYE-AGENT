@@ -1,0 +1,217 @@
+{
+  "main": {
+    "id": "ba007c39e687452a",
+    "type": "split",
+    "children": [
+      {
+        "id": "9dbdcaa3654ad505",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a343ef6912145ff7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Dashboard.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Dashboard"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9dd6d20d4d20ef6a",
+    "type": "split",
+    "children": [
+      {
+        "id": "71d25a290bfcb998",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9c379237206a9c38",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "26be77c63ce93758",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "939dcaa393ba7cc1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a6e94fdd820f416d",
+    "type": "split",
+    "children": [
+      {
+        "id": "93cfc331191afcfc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fad53ebfa6901822",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Done/TRIAGED_20260223_test_task.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for TRIAGED_20260223_test_task"
+            }
+          },
+          {
+            "id": "3c25b95f7ea34cc8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Done/TRIAGED_20260223_test_task.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from TRIAGED_20260223_test_task"
+            }
+          },
+          {
+            "id": "51d34cb112f7a5cf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "a1f211c497440190",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "e60dd68286a59c4e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Done/TRIAGED_20260223_test_task.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of TRIAGED_20260223_test_task"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "a343ef6912145ff7",
+  "lastOpenFiles": [
+    "Company_Handbook.md",
+    "Dashboard.md",
+    "Done/EMAIL_20260302T230952_Maheen__want_to_continue_receiving_job_alerts.md",
+    "Needs_Action/EMAIL_20260302T230945_Security_alert.md",
+    "Done/TRIAGED_20260223_test_task.md",
+    "Logs/2026-03-02.md",
+    "Logs/2026-02-23.md",
+    "Needs_Action/EMAIL_20260302T232156_Security_alert.md",
+    "Approved",
+    "Needs_Action/EMAIL_20260302T230954_Maheen__add_Muhammad_Usman_Bashir.md",
+    "Needs_Action/EMAIL_20260302T230953_digital_marketing_specialist___GNO_Partners.md",
+    "Needs_Action/EMAIL_20260302T230953_digital_marketing_manager___Speakeasy_Author.md",
+    "Needs_Action/EMAIL_20260302T230953_1_profile_view.md",
+    "Needs_Action/EMAIL_20260302T230952_Maheen__want_to_continue_receiving_job_alerts.md",
+    "Needs_Action/EMAIL_20260302T230952_Leigh_McKenzie_recently_posted.md",
+    "Needs_Action/EMAIL_20260302T230951_You_have_2_new_invitations.md",
+    "Needs_Action/EMAIL_20260302T230951_digital_marketing_specialist___Flow_Ink_-_Me.md",
+    "Needs_Action/EMAIL_20260302T230951_digital_marketing_manager___One-Off_Studios.md",
+    "Needs_Action/EMAIL_20260302T230950_You_appeared_in_recent_searches.md",
+    "Needs_Action/EMAIL_20260302T230950_Write_faster_with_ChatGPT.md",
+    "Needs_Action/EMAIL_20260302T230950_digital_marketing_specialist___Enertions_-_D.md",
+    "Needs_Action/EMAIL_20260302T230949_Maheen__add_Ayesha_Bibi_-_Digital_Marketing_I.md",
+    "Needs_Action/EMAIL_20260302T230949_digital_marketing_manager___Carpe_Diem_Team.md",
+    "Needs_Action/EMAIL_20260302T230949_Dener_Lippert_reacted_to_this_post__Lista_de.md",
+    "Needs_Action/EMAIL_20260302T230948_digital_marketing_specialist___TalentPop_App.md",
+    "Needs_Action/EMAIL_20260302T230948_digital_marketing_manager___Fivestaff_-_Mark.md",
+    "Needs_Action/EMAIL_20260302T230947_digital_marketing_specialist___TalentPop_App.md",
+    "Inbox/test_invoice.pdf"
+  ]
+}

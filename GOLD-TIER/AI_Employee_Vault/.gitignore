@@ -1,7 +1,0 @@
-.env
-credentials/
-*.token
-__pycache__/
-*.pyc
-.obsidian/
-watcher.log

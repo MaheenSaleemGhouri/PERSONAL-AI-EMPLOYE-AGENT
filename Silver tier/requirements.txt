@@ -1,0 +1,17 @@
+# AI Employee — Silver Tier Requirements
+# Install with: pip install -r requirements.txt
+# After install, also run: playwright install chromium
+
+# File system event monitoring (File System Watcher)
+watchdog>=4.0.0
+
+# Gmail Watcher
+google-auth>=2.0.0
+google-auth-oauthlib>=1.0.0
+google-api-python-client>=2.0.0
+
+# WhatsApp Watcher (uses Playwright — also run: playwright install chromium)
+playwright>=1.40.0
+
+# Utilities
+python-dotenv>=1.0.0

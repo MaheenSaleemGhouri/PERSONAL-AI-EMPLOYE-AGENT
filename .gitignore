@@ -1,7 +1,31 @@
+# Credentials & secrets
 .env
-credentials/
-whatsapp_session/
-node_modules/
+credentials.json
+token.json
+
+# Browser profiles
+whatsapp_profile/
+linkedin_profile/
+
+# Process IDs
+*.pid
+
+# Python
 __pycache__/
-*.log
-.DS_Store
+*.pyc
+*.pyo
+
+# Watcher state files
+.gmail_processed_ids.json
+.whatsapp_processed.json
+.facebook_processed.json
+.twitter_processed.json
+.ralph_wiggum_state.json
+
+# Obsidian workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Odoo data volumes
+odoo_db_data/
+odoo_data/

@@ -1,0 +1,30 @@
+# Credentials & secrets
+.env
+credentials.json
+token.json
+
+# Browser profiles (contain session data)
+whatsapp_profile/
+linkedin_profile/
+
+# Process IDs
+*.pid
+
+# Watcher state files
+AI_Employee_Vault/.gmail_processed_ids.json
+AI_Employee_Vault/.whatsapp_processed.json
+AI_Employee_Vault/.facebook_processed.json
+AI_Employee_Vault/.twitter_processed.json
+AI_Employee_Vault/.ralph_wiggum_state.json
+
+# Audit trail (may contain sensitive data)
+AI_Employee_Vault/Logs/audit_trail.jsonl
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Obsidian
+AI_Employee_Vault/.obsidian/workspace.json
+AI_Employee_Vault/.obsidian/workspace-mobile.json
