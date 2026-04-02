@@ -72,6 +72,7 @@ AI_Employee_Vault/
 | Draft Facebook Post | `/draft-facebook-post` | Draft FB post for approval |
 | Publish Facebook Post | `/publish-facebook-post` | Publish approved FB post via Graph API |
 | Process Facebook | `/process-facebook` | Triage FB/IG comments and messages |
+| Reply Facebook Comment | `/reply-facebook-comment` | Reply to approved FB/IG comment |
 | Draft Twitter Post | `/draft-twitter-post` | Draft tweet for approval |
 | Publish Twitter Post | `/publish-twitter-post` | Publish approved tweet via API v2 |
 | Process Twitter | `/process-twitter` | Triage Twitter mentions |
@@ -83,7 +84,7 @@ AI_Employee_Vault/
 | Weekly Business Audit | `/weekly-business-audit` | Full audit: vault + Odoo + social |
 | Ralph Wiggum Loop | `/ralph-loop` | Autonomous multi-step task loop |
 
-**Total: 28 Agent Skills** (9 Bronze + 6 Silver + 13 Gold)
+**Total: 29 Agent Skills** (9 Bronze + 6 Silver + 14 Gold)
 
 ## Watcher Scripts
 
