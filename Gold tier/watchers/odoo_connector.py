@@ -134,6 +134,16 @@ class OdooClient:
 
     # ── Accounting Helpers ───────────────────────────────────────
 
+    def create_partner(self, name: str, email: str = "", phone: str = "", is_company: bool = True) -> int:
+        """Create a new partner (customer/vendor)."""
+        return self.create("res.partner", {
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "is_company": is_company,
+            "autopost_bills": "never",
+        })
+
     def list_partners(self, company_only: bool = False, limit: int = 50) -> list[dict]:
         domain = [("is_company", "=", True)] if company_only else []
         return self.search_read(
