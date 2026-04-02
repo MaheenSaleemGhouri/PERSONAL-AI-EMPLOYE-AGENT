@@ -172,12 +172,16 @@ class WhatsAppWatcher(BaseWatcher):
             "Your session will be saved for future headless runs."
         )
         try:
-            # Wait up to 3 minutes for the user to scan
-            self._page.wait_for_selector('[data-testid="chat-list"]', timeout=180_000)
+            # Wait up to 5 minutes for the user to scan — try multiple selectors
+            # WhatsApp Web UI changes frequently, so we check several known indicators
+            self._page.wait_for_selector(
+                '[data-testid="chat-list"], [aria-label="Chat list"], #pane-side, [data-testid="chatlist-header"], div[role="grid"]',
+                timeout=300_000,
+            )
             self.logger.info("Logged in successfully! Session saved.")
-            time.sleep(3)
+            time.sleep(5)
         except PlaywrightTimeout:
-            self.logger.warning("QR scan timed out. Please try again.")
+            self.logger.warning("QR scan timed out after 5 minutes. Please try again.")
         finally:
             self._close_browser()
 
